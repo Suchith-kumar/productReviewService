@@ -1,0 +1,37 @@
+[
+  {
+    "averageRating": 2.5,
+    "reviewSource": "iTunes",
+    "ratingMonth": 1
+  },
+  {
+    "averageRating": 2.5,
+    "reviewSource": "iTunes",
+    "ratingMonth": 2
+  },
+  {
+    "averageRating": 2.4,
+    "reviewSource": "iTunes",
+    "ratingMonth": 12
+  },
+  {
+    "averageRating": 3.9,
+    "reviewSource": "GooglePlayStore",
+    "ratingMonth": 1
+  },
+  {
+    "averageRating": 3.9,
+    "reviewSource": "GooglePlayStore",
+    "ratingMonth": 2
+  },
+  {
+    "averageRating": 3.1,
+    "reviewSource": "GooglePlayStore",
+    "ratingMonth": 5
+  },
+  {
+    "averageRating": 3.5,
+    "reviewSource": "GooglePlayStore",
+    "ratingMonth": 6
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "review": "I think this app works really well. I wish you could move the order of items in the lists and I wish you could edit an item in a list without completely retyping it.",
+    "author": "Heather M.",
+    "reviewSource": "GooglePlayStore",
+    "rating": 4,
+    "title": "",
+    "productName": "Amazon Alexa",
+    "reviewedDate": "2017-09-10T00:00:00.000+00:00"
+  },
+  {
+    "id": 2,
+    "review": "Useful",
+    "author": "nicolas galperin",
+    "reviewSource": "GooglePlayStore",
+    "rating": 4,
+    "title": "",
+    "productName": "Amazon Alexa",
+    "reviewedDate": "2017-09-12T00:00:00.000+00:00"
+  },
+  {
+    "id": 2,
+    "review": "Awesome.",
+    "author": "Larry Wayne",
+    "reviewSource": "GooglePlayStore",
+    "rating": 4,
+    "title": "",
+    "productName": "Amazon Alexa",
+    "reviewedDate": "2017-09-15T00:00:00.000+00:00"
+  }
+]

@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:reviewDb;TIME ZONE=UTC
+    username: sa
+    password: password
+    driverClassName: org.h2.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+#  h2:
+#    console:
+#      enabled: true
+
+springdoc:
+  api-docs:
+    path: /v1/api-docs
+  swagger-ui:
+    path: /v1/swagger-ui.html

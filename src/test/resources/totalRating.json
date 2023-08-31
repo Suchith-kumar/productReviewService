@@ -1,0 +1,52 @@
+[
+  {
+    "rating": 1,
+    "reviewSource": "iTunes",
+    "total": 532
+  },
+  {
+    "rating": 2,
+    "reviewSource": "iTunes",
+    "total": 156
+  },
+  {
+    "rating": 3,
+    "reviewSource": "iTunes",
+    "total": 103
+  },
+  {
+    "rating": 4,
+    "reviewSource": "iTunes",
+    "total": 45
+  },
+  {
+    "rating": 5,
+    "reviewSource": "iTunes",
+    "total": 36
+  },
+  {
+    "rating": 1,
+    "reviewSource": "GooglePlayStore",
+    "total": 1988
+  },
+  {
+    "rating": 2,
+    "reviewSource": "GooglePlayStore",
+    "total": 772
+  },
+  {
+    "rating": 3,
+    "reviewSource": "GooglePlayStore",
+    "total": 640
+  },
+  {
+    "rating": 4,
+    "reviewSource": "GooglePlayStore",
+    "total": 437
+  },
+  {
+    "rating": 5,
+    "reviewSource": "GooglePlayStore",
+    "total": 1401
+  }
+]

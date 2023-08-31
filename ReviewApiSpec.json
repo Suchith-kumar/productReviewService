@@ -1,0 +1,282 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Customer Review ratings API Spec",
+    "description": "This API exposes endpoints to manage Ratings of the product.",
+    "contact": {
+      "name": "Suchith",
+      "url": "https://www.bezkoder.com",
+      "email": "kvsuchit@gmail.com"
+    },
+    "license": {
+      "name": "MIT License",
+      "url": "https://choosealicense.com/licenses/mit/"
+    },
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080",
+      "description": "Generated server url"
+    }
+  ],
+  "paths": {
+    "/api/v1/review": {
+      "post": {
+        "tags": [
+          "Product-Review"
+        ],
+        "summary": "Adds a new Customer Reviews",
+        "operationId": "createReview",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ReviewRequestDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "Created the Review",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/review/totalRatings": {
+      "get": {
+        "tags": [
+          "Product-Review"
+        ],
+        "summary": "Fetch Overall rating by category per Play Store type",
+        "operationId": "allReviewRatings",
+        "responses": {
+          "200": {
+            "description": "Details of total Rating by category",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/TotalRating"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/review/search": {
+      "get": {
+        "tags": [
+          "Product-Review"
+        ],
+        "summary": "Search Customer Reviews with filters",
+        "operationId": "search",
+        "parameters": [
+          {
+            "name": "reviewFilters",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "$ref": "#/components/schemas/ReviewFilterDto"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Filtered Review",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/ReviewSearchResult"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    },
+    "/api/v1/review/avgMonthlyRating": {
+      "get": {
+        "tags": [
+          "Product-Review"
+        ],
+        "summary": "Fetch average Monthly Rating By Play Store",
+        "operationId": "averageMonthlyRating",
+        "responses": {
+          "200": {
+            "description": "Details of average Monthly Review Rating",
+            "content": {
+              "*/*": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/AverageRate"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal Server Error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ReviewRequestDto": {
+        "required": [
+          "author",
+          "product_name",
+          "review_source",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "review": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "rating": {
+            "maximum": 5,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string"
+          },
+          "review_source": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "reviewed_date": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "TotalRating": {
+        "type": "object",
+        "properties": {
+          "rating": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "total": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "ReviewFilterDto": {
+        "type": "object",
+        "properties": {
+          "rating": {
+            "maximum": 5,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "store": {
+            "type": "string"
+          },
+          "startDate": {
+            "type": "string"
+          },
+          "endDate": {
+            "type": "string"
+          }
+        }
+      },
+      "ReviewSearchResult": {
+        "type": "object",
+        "properties": {
+          "review": {
+            "type": "string"
+          },
+          "author": {
+            "type": "string"
+          },
+          "reviewSource": {
+            "type": "string"
+          },
+          "rating": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string"
+          },
+          "productName": {
+            "type": "string"
+          },
+          "reviewedDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        }
+      },
+      "AverageRate": {
+        "type": "object",
+        "properties": {
+          "averageRating": {
+            "type": "number",
+            "format": "float"
+          },
+          "ratingMonth": {
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      }
+    }
+  }
+}
